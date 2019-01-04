@@ -5,6 +5,13 @@ An ansible role for installing GRASS GIS on Ubuntu 16.04 & 18.04 and Fedora 28 &
 
 The role also installs the latest Python 2 version and R
 
+Install the role
+----------------
+
+You can install the role by using:
+
+    ansible-galaxy install pmav99.install_grass
+
 Example Playbook
 ----------------
 
