@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role: install_grass
+  role_name: install_grass
   author: Panagiotis Mavrogiorgos
   description: Install grass gis using binary packages.
   license: MIT
@@ -30,8 +30,8 @@ galaxy_info:
         - 29
     - name: Ubuntu
       versions:
-        - 16.04
-        - 18.04
+        - 1604
+        - 1804
 
   galaxy_tags:
     - grass
