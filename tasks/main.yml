@@ -1,0 +1,9 @@
+# tasks file for install grass
+
+---
+
+- import_tasks: 'ubuntu.yml'
+  when: ansible_distribution == 'Ubuntu'
+
+- import_tasks: 'fedora.yml'
+  when: ansible_distribution == 'Fedora'

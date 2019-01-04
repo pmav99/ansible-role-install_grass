@@ -1,0 +1,72 @@
+# Add useful ppas
+
+---
+
+- name: 'Add ppa:ubuntugis/ubuntugis-unstable'
+  tags: []
+  apt_repository:
+    repo: 'ppa:ubuntugis/ubuntugis-unstable'
+  become: true
+
+- name: 'Add ppa:deadsnakes/ppa repo (for newer python versions)'
+  tags: []
+  apt_repository:
+    repo: 'ppa:deadsnakes/ppa'
+  become: true
+
+- name: 'Add ppa:marutter/rrutter (for R stuff)'
+  tags: []
+  apt_repository:
+    repo: 'ppa:marutter/rrutter'
+  become: true
+
+- name: 'Update package database '
+  apt:
+    cache_valid_time: 3600
+    update_cache: true
+    upgrade: safe
+  become: true
+
+- name: 'Install Python'
+  apt:
+    state: 'present'
+    name:
+      - 'python2.7'
+      - 'python2.7-dev'
+  become: true
+
+- name: 'Install R'
+  apt:
+    state: 'present'
+    name:
+      - 'r-base'
+      - 'r-base-dev'
+  become: true
+
+- name: 'Install node (needed for e.g. topojson)'
+  apt:
+    state: 'present'
+    name:
+      - 'nodejs'
+      - 'npm'
+  become: true
+
+- name: 'Install GDAL + PROJ + PDAL'
+  apt:
+    state: 'present'
+    name:
+      - 'gdal-bin'
+      - 'proj-bin'
+      - 'pdal'
+  become: true
+
+- name: 'Install Grass'
+  apt:
+    state: 'present'
+    update_cache: true
+    cache_valid_time: 3600
+    name:
+      - 'grass'
+      - 'grass-dev'
+      - 'grass-doc'
+  become: true

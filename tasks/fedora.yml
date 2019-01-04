@@ -1,0 +1,48 @@
+# Install
+
+---
+
+- name: 'Enable dnf copr'
+  dnf:
+    name: 'dnf-plugins-core'
+    state: 'latest'
+
+# Enabling dnf copr is not yet supported by ansible, so using `command` is unavoidable.
+# https://github.com/ansible/ansible/issues/26673
+- name: 'Enable neteler/grass74 Copr'
+  command: 'dnf copr enable -y neteler/grass74'
+  args:
+    creates: '/etc/yum.repos.d/_copr_neteler-grass74.repo'
+  become: true
+
+- name: 'Enable neteler/liblas Copr'
+  command: 'dnf copr enable -y neteler/liblas'
+  args:
+    creates: '/etc/yum.repos.d/_copr_neteler-liblas.repo'
+  become: true
+
+- name: 'Enable neteler/laszip Copr'
+  command: 'dnf copr enable -y neteler/laszip'
+  args:
+    creates: '/etc/yum.repos.d/_copr_neteler-laszip.repo'
+  become: true
+
+- name: 'dnf update'
+  dnf:
+    state: 'present'
+    update_cache: true
+
+- name: 'Install grass74 + dependencies'
+  dnf:
+    state: 'latest'
+    name:
+      - 'grass'
+      - 'grass-libs'
+      - 'grass-gui'
+      - 'liblas'
+      - 'grass-devel'
+      - 'liblas'
+      - 'liblas-devel'
+      - 'r'
+      - 'nodejs'
+  become: true
