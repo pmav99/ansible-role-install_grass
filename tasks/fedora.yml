@@ -5,7 +5,7 @@
 - name: 'Enable dnf copr'
   dnf:
     name: 'dnf-plugins-core'
-    state: 'latest'
+    state: 'present'
 
 # Enabling dnf copr is not yet supported by ansible, so using `command` is unavoidable.
 # https://github.com/ansible/ansible/issues/26673
@@ -34,7 +34,7 @@
 
 - name: 'Install grass74 + dependencies'
   dnf:
-    state: 'latest'
+    state: 'present'
     name:
       - 'grass'
       - 'grass-libs'
