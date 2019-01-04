@@ -30,8 +30,8 @@ galaxy_info:
         - 29
     - name: Ubuntu
       versions:
-        - 1604
-        - 1804
+        - xenial
+        - bionic
 
   galaxy_tags:
     - grass
