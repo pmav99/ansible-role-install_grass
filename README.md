@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/pmav99/ansible-role-install_grass.svg?branch=master)](https://travis-ci.com/pmav99/ansible-role-install_grass)
+
 install_grass
 =============
 
