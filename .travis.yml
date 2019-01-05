@@ -1,0 +1,35 @@
+---
+sudo: required
+language: python
+services:
+  - docker
+
+env:
+  global:
+    - ROLE_NAME: install_grass
+  matrix:
+    - MOLECULE_DISTRO: fedora28
+    - MOLECULE_DISTRO: fedora29
+    - MOLECULE_DISTRO: ubuntu1604
+    - MOLECULE_DISTRO: ubuntu1804
+
+before_install:
+  - sudo apt-get -qq update
+
+install:
+  - pip install molecule
+  - pip install docker
+
+
+before_script:
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - ls -lah
+  - mv ansible-role-install_grass pmav99.install_grass
+  - cd pmav99.install_grass
+
+script:
+  - molecule test
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
