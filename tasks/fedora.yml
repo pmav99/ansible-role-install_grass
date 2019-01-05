@@ -12,19 +12,19 @@
 - name: 'Enable neteler/grass74 Copr'
   command: 'dnf copr enable -y neteler/grass74'
   args:
-    creates: '/etc/yum.repos.d/_copr_neteler-grass74.repo'
+    creates: '/etc/yum.repos.d/*neteler?grass74.repo'
   become: true
 
 - name: 'Enable neteler/liblas Copr'
   command: 'dnf copr enable -y neteler/liblas'
   args:
-    creates: '/etc/yum.repos.d/_copr_neteler-liblas.repo'
+    creates: '/etc/yum.repos.d/*neteler?liblas.repo'
   become: true
 
 - name: 'Enable neteler/laszip Copr'
   command: 'dnf copr enable -y neteler/laszip'
   args:
-    creates: '/etc/yum.repos.d/_copr_neteler-laszip.repo'
+    creates: '/etc/yum.repos.d/*neteler?laszip.repo'
   become: true
 
 - name: 'dnf update'
