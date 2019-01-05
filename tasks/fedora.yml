@@ -27,11 +27,6 @@
     creates: '/etc/yum.repos.d/*neteler?laszip.repo'
   become: true
 
-- name: 'dnf update'
-  dnf:
-    state: 'present'
-    update_cache: true
-
 - name: 'Install grass74 + dependencies'
   dnf:
     state: 'present'
