@@ -7,11 +7,7 @@ services:
 env:
   global:
     - ROLE_NAME: install_grass
-  matrix:
-    - MOLECULE_DISTRO: fedora28
-    - MOLECULE_DISTRO: fedora29
-    - MOLECULE_DISTRO: ubuntu1604
-    - MOLECULE_DISTRO: ubuntu1804
+    - FULL_ROLE_NAME: pmav99.install_grass
 
 before_install:
   - sudo apt-get -qq update

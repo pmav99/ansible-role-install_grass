@@ -2,4 +2,4 @@
 - name: Converge
   hosts: all
   roles:
-    - role: install_grass
+    - role: "{{ lookup('env', 'FULL_ROLE_NAME') or 'install_grass' }}"

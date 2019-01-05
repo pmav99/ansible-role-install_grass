@@ -43,6 +43,6 @@
       - 'grass-devel'
       - 'liblas'
       - 'liblas-devel'
-      - 'r'
+      - 'R'
       - 'nodejs'
   become: true
