@@ -23,11 +23,14 @@ If you want to install grass locally you can use the following playbook:
       connection: local
       roles:
          - role: pmav99.install_grass
+         
+You can also download it with:
+
+    wget https://raw.githubusercontent.com/pmav99/ansible-role-install_grass/master/sample_playbook.yml -O playbook.yml
 
 and you can run it with:
 
     ansible-playbook playbook.yml
-
 
 License
 -------
