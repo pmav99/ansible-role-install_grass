@@ -7,6 +7,13 @@ An ansible role for installing GRASS GIS on Ubuntu 16.04 & 18.04 and Fedora 28 &
 
 The role also installs the latest Python 2 version and R
 
+Quickstart
+----------
+
+    ansible-galaxy install pmav99.install_grass
+    curl https://raw.githubusercontent.com/pmav99/ansible-role-install_grass/master/sample_playbook.yml -o install_grass.yml
+    ansible-playbook install_grass.yml --ask-become
+
 Install the role
 ----------------
 
@@ -27,10 +34,6 @@ If you want to install grass locally you can use the following playbook:
 You can also download it with:
 
     wget https://raw.githubusercontent.com/pmav99/ansible-role-install_grass/master/sample_playbook.yml -O playbook.yml
-
-and you can run it with:
-
-    ansible-playbook playbook.yml
 
 License
 -------
